@@ -1,4 +1,5 @@
 /* Body */
+
 body {
     background-color: #fefefe;
     color: #333;
@@ -8,63 +9,108 @@ body {
 }
 
 /* Header */
-.header {
+
+header .logo-container {
     background-color: black;
     color: rgb(245, 243, 248);
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.40fr 0.60fr ;
     justify-content: space-between;
-    align-items:center;
-    padding: 10px 20px;
+    align-items: center;
+    padding: 10px 30px;
+    
 }
-header nav{
+header h1{
+    font-family: "Robaga" ,wavy ;
+    font-size: 40px;
+}
+
+/* -----nav------ */
+nav{
+    background-color: black;
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
-header ul li{
+nav ul li{
+    display: inline-block;
     margin-left: 20px;
+    padding-inline: 40px;
+
 }
-header ul li a{
-    color: black;
+nav ul li a{
+    color:white;
     text-decoration: none;
     font-weight: bold;
 }
 nav ul li a:hover{
-    text-decoration: underline;
+    color: #CE70BA;
 }
-.logo img {
+
+.logo-container img {
     width: 150px;
+    border-radius: 50%;
+}
+
+
+nav .login {
+    background-color: #5dc1b9;
+    color: black;
+    font-size: medium;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+
+
+/* -----section --------*/
+section .section-container{
+    display: grid;
+    grid-template-columns: 0.70fr 0.30fr ;
+    justify-content: space-between;
+    align-items: center;
+    padding:  50px;
+
+}
+.section-container p{
+    font-size: 30px;
+    text-align: center;
 }
 
 .title {
     font-size: 4rem;
     font-family: 'Cursive', sans-serif;
 }
+
 .hero img{
-    width: 50px;
+    width: 450px;
+    height: 450px;
+    border-radius: 20px;
 }
 
-.navbar a {
+
+
+.head-label{
+    height: 70px;
+    background-color: #000;
+    border-radius: 10px;
+    
+    
+}
+.head-label h1{
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1rem;
+    text-align: center;
+    font-size: 35px;
 }
 
-.navbar .active {
-    color: pink;
-    font-weight: bold;
-}
 
-.nav .login-btn {
-    background-color: #5dc1b9;
-    color: black;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* coursess */
+/* ******coursess******* */
 
 .courses {
     text-align: center;
@@ -78,82 +124,63 @@ nav ul li a:hover{
     margin-bottom: 30px;
 }
 
-/* Course Categories */
+
 .course-category {
     margin-bottom: 40px;
 }
 
-.course-category h3 {
+.course-cont h3 {
     font-size: 30px;
     color: #2980b9;
-    margin-bottom: 15px;
 }
 
-/* Courses Grid */
+
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
 }
 
-/* Individual Course Box */
 .course {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.course img {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensures the image fills the area while maintaining proportions */
+    display: block;
+}
+
+.course p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.course .stars {
+    font-size: 1em;
+    color: #f39c12; /* Star color */
+    margin-bottom: 10px;
+}
+
 
 .course:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Course Image */
-.course img {
-    width: 200px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 20px;
+
+.course-cont{
+    display: flex;
+    align-items: center;
 }
-
-/* Course Text */
-.course p {
-    font-size: 16px;
-    color: #2c3e50;
-    font-weight: bold;
-}
-
-/* Star Ratings */
-.stars {
-    font-size: 30px;
-    color: gold;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .courses-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .course img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .course p {
-        font-size: 14px;
-    }
-
-    .stars {
-        font-size: 16px;
-    }
+.rounded-image{
+    border-radius: 50px;
+    margin-right: 10px;
 }
 
 /*events*/
@@ -170,87 +197,66 @@ nav ul li a:hover{
     margin-bottom: 30px;
 }
 
-/* Events Container */
-.events-container {
+.carousel {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Individual Event */
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
 .event {
     display: flex;
     flex-direction: column;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 320px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 400px;
+    margin: 0 10px;
 }
 
-.event:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Event Image */
 .event img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
 
-/* Event Info */
 .event-info {
-    display: flex;
-    align-items: center;
     padding: 15px;
-}
-
-/* Calendar Date Box */
-.event-date {
-    background: #2980b9;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 8px;
-    width: 60px;
-    margin-right: 15px;
-}
-
-.event-date .day {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.event-date .month {
-    font-size: 14px;
-    text-transform: uppercase;
-}
-
-/* Event Details */
-.event-details {
     text-align: left;
 }
 
-.event-details h3 {
-    font-size: 18px;
-    color: #2c3e50;
-    margin-bottom: 5px;
+.carousel-control {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
 }
 
-.event-details p {
-    font-size: 14px;
-    color: #555;
-    margin: 3px 0;
+.carousel-control.prev {
+    left: 10px;
 }
 
-.event-description {
-    font-size: 12px;
-    color: #777;
-    margin-top: 5px;
+.carousel-control.next {
+    right: 10px;
 }
 
 /* Icons */
@@ -259,19 +265,13 @@ nav ul li a:hover{
     margin-right: 5px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .events-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
 
-/* Features Section */
+
+/* _________Features______ */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
     padding: 20px;
     background-color: #fff;
@@ -291,39 +291,103 @@ nav ul li a:hover{
 }
 
 .feature h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #333;
     margin-bottom: 10px;
 }
 
 .feature p {
-    font-size: 0.9rem;
+    font-size: 16px;
     color: #555;
 }
-/* certificat*/
+
+
+/* _______certificat________*/
 .certificate {
     text-align: center;
-    padding: 50px 20px;
     background-color: #f9f9f9;
 }
 
 .certificate h2 {
     font-size: 30px;
     color: #2c3e50;
-    margin-bottom: 20px;
 }
 
 .certificate p {
-    font-size: 16px;
+    font-size: 26px;
     color: #555;
     margin-bottom: 40px;
 }
+.prof-certif{
+    display: flex;
+    align-items: center;
+}
+.prof-certif img{
+    height:170px;
+    width: 170px;
+    margin :10px;
+}
+
+.certificate-item{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 .certificate-item img{
-    width: 50%;
+    width: 40%;
+}
+
+.certificate-items{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+
+
+}
+.certificate-items img{
+    margin-left: 100px;
+}
+.right-side{
+    display: flex;
+    align-items: center;
+}
+.right-side h2 {
+    width: 450px;
+}
+/* revolution container */
+.container p{
+    font-size: 30px;
+
+
+}
+
+.container-quality{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 50px 200px 50px 200px ;
+}
+.quality-card{
+    display: grid;
+    color: #f1f1f1;
+    background: linear-gradient(0.25turn, #3f87a6, #f69d3c);
+    border-radius: 10px;
+    height: 250px;
+    font-size: 60px;
+    font-weight:bolder ;
+    
 }
 
 
-/* Login/Register Section */
+#card{
+    font-size: 30px   ;
+
+}
+
+
+
+
+
+/* _______Login/Register _____ */
 #login-register {
     background-color: #fff;
     padding: 50px 20px;
@@ -333,12 +397,7 @@ nav ul li a:hover{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#login-register h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
+
 
 #login-register form {
     display: flex;
@@ -373,18 +432,19 @@ nav ul li a:hover{
     border-top: 1px solid #ddd;
 }
 
-/* Contact Section */
+/* ______Contact______*/
 
 .contact {
     background-color: #ffebec;
-    padding: 50px 20px;
-    text-align: center;
+    border-radius: 10px;
+
 }
 
 .contact h2 {
     font-size: 28px;
     margin-bottom: 20px;
     color: #333;
+    
 }
 
 .contact form {
@@ -392,6 +452,8 @@ nav ul li a:hover{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    
+    
 }
 
 .contact form input, .contact form textarea {
@@ -424,13 +486,41 @@ nav ul li a:hover{
     margin-bottom: 10px;
     
 }
-/*zedthamn tajrba*/
+
 .contact.nav{
     background-color: black;
 
 }
+.form-section{
+    display: grid;
+    padding: 50px;  
+    background-color: WHITE;
+    border-radius: 10px;
+}
+.top-section{
+    text-align: center;
+}
+.container-location{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0px 20px 0;
+}
+.container-location img{
+    margin-right: 10px;
+}
+.field{
+    display: grid;
+}
+.input-style{
+    display: flex;
+    justify-content: space-between;
+}
 
-/* Pricing Section */
+
+/* _______Pricing ____ */
 .pricing {
     background-color: #fff;
     padding: 50px 20px;
@@ -456,7 +546,6 @@ nav ul li a:hover{
     font-weight: bold;
 }
 
-/* General Section Styling */
 .pricing {
     text-align: center;
     padding: 50px 20px;
@@ -469,7 +558,16 @@ nav ul li a:hover{
     margin-bottom: 20px;
 }
 
-/* Table Styling */
+
+
+
+
+
+
+
+/* ------Table --------- */
+
+
 table {
     width: 90%;
     max-width: 800px;
@@ -498,24 +596,20 @@ td {
     color: #2c3e50;
 }
 
-/* Highlighting first column */
 td.feature {
     font-weight: bold;
     background: #ecf0f1;
 }
 
-/* Highlight header row */
 thead tr {
     background: #CE70BA;
     color: white;
 }
 
-/* Alternating Row Colors */
 tbody tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-/* Add Check & Cross Icons */
 td:contains("✅") {
     color: green;
     font-size: 20px;
@@ -526,7 +620,6 @@ td:contains("❌") {
     font-size: 20px;
 }
 
-/* Hover Effect */
 tr:hover {
     background: #f1f1f1;
 }
@@ -534,7 +627,9 @@ p{
     margin-top: 20px;
 }
 
-/* Responsive Design */
+
+
+/* -------Media Queries ---- */
 @media (max-width: 768px) {
     table {
         width: 100%;
@@ -546,13 +641,47 @@ p{
     }
 }
 
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .course img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .course p {
+        font-size: 14px;
+    }
+
+    .stars {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 /* Footer */
-.footer {
-    background-color: black;
-    color: white;
+footer {
+    background-color: #000;
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 0.9rem;
+    padding: 15px 10px 20px;
+    color: #ddd;
+    font-size: larger;
+    font-size: 32px;
+}
+
+
+/* ---font face---- */
+
+@font-face {
+    font-family: "Robaga";
+    src: url("Robaga\ Rounded\ Bold-Italic.otf");
 }
